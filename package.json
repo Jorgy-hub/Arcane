@@ -1,0 +1,16 @@
+{
+  "name": "discord-bots-api",
+  "version": "1.0.0",
+  "description": "Connect to the best Discord Related APIs the easiest way!",
+  "main": "app.ts",
+  "repository": "https://github.com/Uraraka-Chan/discord-bots-api.git",
+  "author": "Uraraka-Chan <71365133+Uraraka-Chan@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "undici": "^5.2.0"
+  }
+}
