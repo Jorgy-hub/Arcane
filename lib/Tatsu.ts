@@ -26,7 +26,6 @@ export  class Tatsu {
      * @param { string } guildID 
      * @returns { Promise<any> }
      */
-
     async getUserRank( userID: string, guildID: string ): Promise<any> {
         return await this.handler._request(
            "GET",
