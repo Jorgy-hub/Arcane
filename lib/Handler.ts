@@ -1,6 +1,4 @@
-import { arrayBuffer } from 'stream/consumers';
-import { BodyMixin, request } from 'undici';
-
+import { request } from 'undici';
 export class Handler {
     public headers: any;
     private reset: number;
