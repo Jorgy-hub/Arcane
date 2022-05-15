@@ -1,17 +1,12 @@
-import { Tatsu } from "./lib/Tatsu";
-import { UnbelievaBoat } from "./lib/UnbelievaBoat";
-Fetch();
+import { League } from "./lib/League";
+LeagueFetch();
 
-async function TatsuFetch() {
-    let tatsu = new Tatsu({ token: "test" });
-    let data = await tatsu.getUser("304357538101723137");
-    console.log(data.level)
-}
+async function LeagueFetch() {
+    let client = new League({ token: "RGAPI-6a00fa00-e8df-4693-bdc8-a280a80422e8", version: "12.9.1", region:"la1" }); 
+    let data =  await client.getSummoner("NotDaiko");  
+    let masteries = await data.getMasteries()
+    console.log(await masteries[0].getChampInfo());
 
-async function Fetch() {
-    let client = new UnbelievaBoat({ token: "test" });
-    let data = await client.getMember("562864900003594253", "304357538101723137");
-    let guild = await data.guild;
-    let lb = await guild.getRanks();
-    console.log(lb)
-}
+    let pyke = await client.getChampion("pyke");
+    console.log(pyke);
+};

@@ -1,7 +1,7 @@
 {
-  "name": "discord-bots-api",
+  "name": "riot-wrapper",
   "version": "1.0.0",
-  "description": "Connect to the best Discord Related APIs the easiest way!",
+  "description": "Easiest way to use the Riot api!",
   "main": "app.ts",
   "repository": "https://github.com/Uraraka-Chan/discord-bots-api.git",
   "author": "Uraraka-Chan <71365133+Uraraka-Chan@users.noreply.github.com>",
