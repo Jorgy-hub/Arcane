@@ -10,7 +10,8 @@ async function TatsuFetch() {
 
 async function Fetch() {
     let client = new UnbelievaBoat({ token: "test" });
-    //let data = await client.getMember("562864900003594253", "304357538101723137");
-    let data = await client.getGuild("562864900003594253");
-    console.log(data)
+    let data = await client.getMember("562864900003594253", "304357538101723137");
+    let guild = await data.guild;
+    let lb = await guild.getRanks();
+    console.log(lb)
 }

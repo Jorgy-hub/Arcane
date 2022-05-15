@@ -7,5 +7,13 @@ export interface APIUnbelievaBoatMember {
 }
 
 export interface APIUnbelievaBoatGuild {
-    
+    id: string;
+    name: string;
+    icon: string;
+    owner_id: string;
+    member_count: number;
+    channels: any[];
+    roles: any[];
+    symbol: string;
+    vanity_code: any;
 }
