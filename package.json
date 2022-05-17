@@ -1,5 +1,5 @@
 {
-  "name": "riot-wrapper",
+  "name": "arcane",
   "version": "1.0.0",
   "description": "Easiest way to use the Riot api!",
   "main": "app.ts",
