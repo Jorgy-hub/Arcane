@@ -1,5 +1,6 @@
 import { APILeagueMastery} from "../../interfaces/League";
 import { League } from "../../League";
+import { LeagueChampion } from "./Champion";
 
 export class LeagueMastery {
     public championId: number;
@@ -11,11 +12,22 @@ export class LeagueMastery {
     public chestGranted: boolean;
     public tokensEarned: number;
     public summonerId: string;
-    public getChampInfo: Function;
     private _client: League;
 
+    /**
+     * Main Class for a Mastery stored in a Profile.
+     * @param { League} client 
+     * @param { APILeagueMastery } data 
+     */
     constructor(client: League, data: APILeagueMastery){
+        /** Main Data. */
         this._client = client;
+
+        /** Check if the information is valid. */
+        if(!data.championId)
+            throw new Error("No champions was given!");
+
+        /** Main Mastery Structure. */
         this.championId = data.championId;
         this.championLevel = data.championLevel;
         this.championPoints = data.championPoints;
@@ -25,10 +37,13 @@ export class LeagueMastery {
         this.chestGranted = data.chestGranted;
         this.tokensEarned = data.tokensEarned;
         this.summonerId = data.summonerId;
-        this.getChampInfo = async () => {
-            const list = await this._client.getChampionsList();
-            const champs = Object.values(list.data);
-            return champs.find((champ: any)=> champ.key == this.championId);
-        }
     };
+
+    /**
+     * Returns the League Champion Class with it's info, stats, etc...
+     * @returns { LeagueChampion }
+     */
+    public getChampInfo(): Promise<LeagueChampion> {
+        return this._client.getChampionById(this.championId);
+    }; 
 };

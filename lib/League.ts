@@ -1,9 +1,10 @@
-import { off } from "process";
 import { Handler } from "./Handler";
 import { LeagueSummoner } from "./structures/League/Summoner";
 import { LeagueMastery } from "./structures/League/Mastery";
-import { APILeagueEntry, APILeagueMastery } from "./interfaces/League";
-import { LeagueEntry } from "./structures/League/Profile";
+import { APILeagueActiveMatch, APILeagueEntry, APILeagueMastery } from "./interfaces/League";
+import { LeagueEntry } from "./structures/League/Entry";
+import { LeagueChampion } from "./structures/League/Champion";
+import { LeagueActiveMatch } from "./structures/League/Match/ActiveMatch";
 
 const API = {
     url: ".api.riotgames.com",
@@ -20,7 +21,7 @@ export  class League {
      * @param { any } config 
      */
     constructor( config: any ){
-        this.url = "https://" + config.region + API.url;
+        this.url = API.url;
         this.version = config.version;
         this.token = config.token;
         this.handler = new Handler( 
@@ -31,50 +32,88 @@ export  class League {
     /**
      * Function to GET the League Summoner Profile.
      * @param { string } name 
+     * @param { string } region
      * @returns { Promise<LeagueSummoner> }
      */
-    getSummoner( name: string ): Promise<LeagueSummoner> {
+    getSummoner( name: string, region: string ): Promise<LeagueSummoner> {
         return this.handler._request(
             "GET",
-            `${this.url}`,
+            `https://${region}${this.url}`,
             `/lol/summoner/v4/summoners/by-name/${name.replace(/ /g,"%20")}`
-        ).then((data: any) => new LeagueSummoner(this, data));
+        ).then((data: any) => new LeagueSummoner(this, region, data));
     };
 
     /**
-     * 
+     * This Function will get the Ranked Stats of a Summoner.
      * @param { string } id 
+     * @param { string } region
      * @returns { Promise<LeagueEntries> }
      */
-    getSummonerEntries( id: string ): Promise<LeagueEntry[]> {
+    getSummonerEntries( id: string, region: string  ): Promise<LeagueEntry[]> {
         return this.handler._request(
             "GET",
-            `${this.url}`,
+            `https://${region}${this.url}`,
             `/lol/league/v4/entries/by-summoner/${id}`
         ).then((data: any) => data.map((element: APILeagueEntry) => new LeagueEntry(element)));
     };
 
-    getSummonerMasteries( id: string ): Promise<LeagueMastery[]> {
+    /**
+     * This function is used to return the List of Champions Masteries.
+     * @param { string }id 
+     * @param { string } region
+     * @returns { Promise<LeagueMastery[]> }
+     */
+    getSummonerMasteries( id: string, region: string  ): Promise<LeagueMastery[]> {
         return this.handler._request(
             "GET",
-            `${this.url}`,
+            `https://${region}${this.url}`,
             `/lol/champion-mastery/v4/champion-masteries/by-summoner/${id}`
         ).then((data: any) => data.map((element: APILeagueMastery) => new LeagueMastery(this, element)));
     };
 
+    getSummonerActiveGame( id: string, region: string  ): Promise<any> {
+        return this.handler._request(
+            "GET",
+            `https://${region}${this.url}`,
+            `/lol/spectator/v4/active-games/by-summoner/${id}`
+        ).then((data: any) => new LeagueActiveMatch(this, region, data));
+    };
+
+    /**
+     * This function is used to get the complete League Champions List. 
+     * @returns { Promise<any> }
+     */
     getChampionsList(): Promise<any> {
         return this.handler._request(
             "GET",
             `http://ddragon.leagueoflegends.com`,
-            `/cdn/${this.version}/data/de_DE/champion.json`
+            `/cdn/${this.version}/data/en_US/champion.json`
         );
     };
 
-    getChampion( name: string ): Promise<any> {
+    /**
+     * This function is used to search for a Champion by the Name.
+     * @param { string } name 
+     * @returns { Promise<any> } 
+     */
+    getChampionByName( name: string ): Promise<any> {
         return this.getChampionsList()
         .then((list:any) => {
             const champs = Object.values(list.data);
             return champs.find((champ: any)=> champ.name.toLowerCase() == name.toLowerCase());
-        });   
+        }).then((champ:any) => new LeagueChampion(champ));   
+    };
+
+    /**
+     * This function is used to search for a Champion by the ID.
+     * @param { number } id 
+     * @returns { Promise<any> } 
+     */
+    getChampionById( id: number ): Promise<any> {
+        return this.getChampionsList()
+        .then((list:any) => {
+            const champs = Object.values(list.data);
+            return champs.find((champ: any)=> champ.key == id);
+        }).then((champ:any) => new LeagueChampion(champ));   
     };
 };
