@@ -1,7 +1,7 @@
 import { Handler } from "./Handler";
 import { LeagueSummoner } from "./structures/League/Summoner";
 import { LeagueMastery } from "./structures/League/Mastery";
-import { APILeagueActiveMatch, APILeagueEntry, APILeagueMastery } from "./interfaces/League";
+import { APILeagueEntry, APILeagueMastery } from "./interfaces/League";
 import { LeagueEntry } from "./structures/League/Entry";
 import { LeagueChampion } from "./structures/League/Champion";
 import { LeagueActiveMatch } from "./structures/League/Match/ActiveMatch";

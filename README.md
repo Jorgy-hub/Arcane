@@ -1,4 +1,4 @@
-# Arcane
+# Riot Wrapper
 
 NodeJs Wrapper for easier use of the [Riot API](https://developer.riotgames.com)
 
