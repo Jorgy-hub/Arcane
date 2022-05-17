@@ -20,12 +20,12 @@ export  class League {
      * Main Class for the Tatsu API.
      * @param { any } config 
      */
-    constructor( config: any ){
+    constructor( token: string, version: string ){
         this.url = API.url;
-        this.version = config.version;
-        this.token = config.token;
+        this.version = version;
+        this.token = token;
         this.handler = new Handler( 
-            { "X-Riot-Token": config.token }
+            { "X-Riot-Token": token }
         );
     };
 
