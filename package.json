@@ -1,6 +1,6 @@
 {
-  "name": "arcane",
-  "version": "1.0.0",
+  "name": "riot-wrapper",
+  "version": "1.0.1",
   "description": "Easiest way to use the Riot api!",
   "main": "app.ts",
   "repository": "https://github.com/Uraraka-Chan/discord-bots-api.git",

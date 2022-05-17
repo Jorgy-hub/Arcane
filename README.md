@@ -4,12 +4,12 @@ NodeJs Wrapper for easier use of the [Riot API](https://developer.riotgames.com)
 
 ## Installing
 ```bash
-npm install --save arcane
+npm install --save riot-wrapper
 ```
 
 ## Summoner Data Example
 ```ts
-const { LeagueClient } = require('arcane');
+const { LeagueClient } = require('riot-wrapper');
 
 // Replace the API_KEY with your Riot key.
 // Replace the LEAGUE_VERSION with the latest League Patch.
@@ -21,7 +21,7 @@ console.log(summoner);
 
 ## Summoner Mastery Example
 ```ts
-const { LeagueClient } = require('arcane');
+const { LeagueClient } = require('riot-wrapper');
 
 const client = new LeagueClient("API_KEY", "LEAGUE_VERSION");
 const summoner = await client.getSummoner("Scaredy Cat", "la1");
