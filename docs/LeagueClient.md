@@ -9,8 +9,8 @@ const { LeagueClient } = require("riot-wrapper");
 | Name                  | Description                                             |
 |-----------------------|---------------------------------------------------------|
 | [getSummoners](#getSummoners)        | Function to Get the League Summoner Profile.            |
-| getSummonerEntries    | Function to Get the Ranked Stats of a Summoner.         |
-| getSummonerMasteries  | Function to Get the List of Masteries of a Summoner.    |
+| [getSummonerEntries](#getSummonerEntries)    | Function to Get the Ranked Stats of a Summoner.         |
+| [getSummonerMasteries](#getSummonerMasteries)  | Function to Get the List of Masteries of a Summoner.    |
 | getSummonerActiveGame | Function to Get the Active Game of a Summoner.          |
 | getChampionList       | Function to get the Full List of Champions in the Game. |
 | getChampionByName     | Search for a Champion in the List by it's name.         |
@@ -28,6 +28,10 @@ LeagueClient.getSummoner(name: string, region: string);
 The Name string of the summoner.
 * <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;"> region </mark>
 The Region string of the Client.
+### Return Value
+A Promise containing a <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;">LeagueSummoner</mark>  Class Object.
+
+___
 
 <a name="getSummonerEntries"></a>
 ### <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;"> LeagueClient.getSummonerEntries </mark>
@@ -37,9 +41,13 @@ LeagueClient.getSummonerEntries(id: string, region: string );
 ```
 ### Parameters
 * <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;"> id </mark>
-The Name string of the summoner.
+The ID string which is the Summoner Profile ID.
 * <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;"> region </mark>
 The Region string of the Client.
+### Return Value
+A Promise containing a <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;">LeagueEntry</mark>  Class Object.
+
+___
 
 <a name="getSummonerMasteries"></a>
 ### <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;"> LeagueClient.getSummonerMasteries </mark>
@@ -49,6 +57,8 @@ LeagueClient.getSummonerMasteries(id: string, region: string );
 ```
 ### Parameters
 * <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;"> id </mark>
-The Name string of the summoner.
+The ID string which is the Summoner Profile ID.
 * <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;"> region </mark>
 The Region string of the Client.
+### Return Value
+A Promise containing an Array of <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;">LeagueMastery</mark>  Class Object.
