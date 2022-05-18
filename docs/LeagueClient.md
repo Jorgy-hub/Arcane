@@ -1,4 +1,4 @@
-# League Client
+# LeagueClient
 
 ## Syntax
 ```js
@@ -121,3 +121,10 @@ The ID number contains the ID of the Champion that is going to be searched.
 A Promise containing a <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;">LeagueChampion</mark>  Class Objects.
 
 ___
+
+<div align=left>
+  <img src="https://forthebadge.com/images/badges/built-with-love.svg" />
+  <img src="https://forthebadge.com/images/badges/made-with-typescript.svg" />
+
+  <img src="https://forthebadge.com/images/badges/powered-by-qt.svg" />
+</div>

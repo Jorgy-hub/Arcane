@@ -1,5 +1,5 @@
 # Riot Wrapper
-[![npm version](https://badge.fury.io/js/riot-wrapper.svg)](https://badge.fury.io/js/riot-wrapper) [![last commit](https://img.shields.io/github/last-commit/Uraraka-Chan/riot-wrapper)](https://img.shields.io/github/last-commit/Uraraka-Chan/riot-wrapper)
+[![npm version](https://badge.fury.io/js/riot-wrapper.svg)](https://badge.fury.io/js/riot-wrapper) [![last commit](https://img.shields.io/github/last-commit/Uraraka-Chan/riot-wrapper)](https://img.shields.io/github/last-commit/Uraraka-Chan/riot-wrapper) <br>
 NodeJs Wrapper for easier use of the [Riot API](https://developer.riotgames.com)
 
 ## Installing
