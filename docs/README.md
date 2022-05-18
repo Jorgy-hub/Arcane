@@ -45,7 +45,7 @@ console.log(champInfo);
 Please read the the [LICENSE](https://github.com/Uraraka-Chan/riot-wrapper/blob/main/LICENSE) file.
 
 ---
-<div align=left>
+<div align=center>
   <img src="https://forthebadge.com/images/badges/built-with-love.svg" />
   <img src="https://forthebadge.com/images/badges/made-with-typescript.svg" />
 
