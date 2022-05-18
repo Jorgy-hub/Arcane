@@ -35,23 +35,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var app_1 = require("./app");
-LeagueFetch();
-function LeagueFetch() {
-    return __awaiter(this, void 0, void 0, function () {
-        var client, data;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    client = new app_1.LeagueClient("RGAPI-923639d5-66dd-4a12-b8e7-f59184d68191", "12.9.1");
-                    return [4 /*yield*/, client.getSummoner("Piupiyuu", "la1")];
-                case 1:
-                    data = _a.sent();
-                    console.log(data);
-                    return [2 /*return*/];
-            }
-        });
+var LeagueClient = require('riot-wrapper').LeagueClient;
+var SummonerFetch = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var client, summoner;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                client = new LeagueClient("API_KEY", "LEAGUE_VERSION");
+                return [4 /*yield*/, client.getSummoner("Scaredy Cat", "la1")];
+            case 1:
+                summoner = _a.sent();
+                console.log(summoner);
+                return [2 /*return*/];
+        }
     });
-}
-;
+}); };
