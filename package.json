@@ -2,15 +2,15 @@
   "name": "riot-wrapper",
   "version": "1.0.1",
   "description": "Easiest way to use the Riot api!",
-  "main": "app.ts",
-  "types": "app.ts",
+  "main": "./dist/app.js",
+  "types": "./dist/app.d.ts",
   "repository": "https://github.com/Uraraka-Chan/discord-bots-api.git",
   "author": "Uraraka-Chan <71365133+Uraraka-Chan@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc -p .",
-    "start": "node app.js",
-    "dev": "node test.js"
+    "build": "tsc",
+    "start": "node ./dist/app.js",
+    "dev": "node ./dist/test.js"
   },
   "dependencies": {
     "undici": "^5.2.0"

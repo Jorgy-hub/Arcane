@@ -8,8 +8,8 @@
     "skipLibCheck": true,                                /* Skip type checking all .d.ts files. */
     "declaration": true,
     "lib": ["es2017", "es7", "es6", "dom"],
+    "outDir": "dist" 
   },
-  "outDir": "dist",
   "exclude": [
     "node_modules",
     "dist"
