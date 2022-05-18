@@ -1,6 +1,6 @@
 {
   "name": "riot-wrapper",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Easiest way to use the Riot api!",
   "main": "./dist/app.js",
   "types": "./dist/app.d.ts",
