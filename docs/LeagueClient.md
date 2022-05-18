@@ -29,7 +29,7 @@ The Name string of the summoner.
 * <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;"> region </mark>
 The Region string of the Client.
 ### Return Value
-A Promise containing a <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;">[LeagueSummoner](https://www.github.com/Uraraka-Chan/riot-wrapper/blob/main/docs/Classes/LeagueSummoner.md)</mark>  Class Object.
+A Promise containing a <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;">[LeagueSummoner](/Classes/LeagueSummoner.md)</mark>  Class Object.
 
 ___
 
