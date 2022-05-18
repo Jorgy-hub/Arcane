@@ -8,7 +8,7 @@ const { LeagueClient } = require("riot-wrapper");
 ## Public Methods
 | Name                                            | Description                                             |
 |-------------------------------------------------|---------------------------------------------------------|
-| [getSummoners](#getSummoners)                   | Function to Get the League Summoner Profile.            |
+| [getSummoner](#getSummoners)                    | Function to Get the League Summoner Profile.            |
 | [getSummonerEntries](#getSummonerEntries)       | Function to Get the Ranked Stats of a Summoner.         |
 | [getSummonerMasteries](#getSummonerMasteries)   | Function to Get the List of Masteries of a Summoner.    |
 | [getSummonerActiveGame](#getSummonerActiveGame) | Function to Get the Active Game of a Summoner.          |
@@ -18,7 +18,7 @@ const { LeagueClient } = require("riot-wrapper");
 
 ## Methods
 <a name="getSummoners"></a>
-### <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;"> LeagueClient.getSummoners </mark>
+### <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;"> LeagueClient.getSummoner </mark>
 Use this function to Get the League Summoner Profile. 
 ```js
 LeagueClient.getSummoner(name: string, region: string);
@@ -29,7 +29,7 @@ The Name string of the summoner.
 * <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;"> region </mark>
 The Region string of the Client.
 ### Return Value
-A Promise containing a <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;">LeagueSummoner</mark>  Class Object.
+A Promise containing a <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;">[LeagueSummoner](github.com/Uraraka-Chan/riot-wrapper/blob/main/docs/Classes/LeagueSummoner.md)</mark>  Class Object.
 
 ___
 
