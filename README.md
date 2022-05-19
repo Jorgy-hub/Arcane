@@ -14,12 +14,12 @@ Arcane.ts is a NodeJs and Typescript wrapper for easier use of the [Riot API](ht
 
 ## Installation
 ```bash
-npm install --save riot-wrapper
+npm install --save arcane.ts
 ```
 
 ## Summoner Data Example
 ```ts
-const { LeagueClient } = require('riot-wrapper');
+const { LeagueClient } = require('arcane.ts');
 
 const client = new LeagueClient("API_KEY", "LEAGUE_VERSION");
 const summoner = await client.getSummoner("Scaredy Cat", "la1");
@@ -29,7 +29,7 @@ console.log(summoner);
 
 ## Summoner Mastery Example
 ```ts
-const { LeagueClient } = require('riot-wrapper');
+const { LeagueClient } = require('arcane.ts');
 
 const client = new LeagueClient("API_KEY", "LEAGUE_VERSION");
 const summoner = await client.getSummoner("Scaredy Cat", "la1");

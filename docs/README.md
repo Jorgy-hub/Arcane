@@ -8,13 +8,13 @@
 
 
 ## About
-Arcane.ts is NodeJs and Typescript wrapper for easier use of the [Riot API](https://developer.riotgames.com) used for games such as League of Legends, Valorant, TFT; This Wrapper is still on development so I haven't completly covered all of the API.
+Arcane.ts is a NodeJs and Typescript wrapper for easier use of the [Riot API](https://developer.riotgames.com) used for games such as League of Legends, Valorant, TFT; This Wrapper is still on development so I haven't completly covered all of the API.
 * Object-oriented
 * Performant
 
 ## Installation
 ```bash
-npm install --save riot-wrapper
+npm install --save arcane.ts
 ```
 
 ## Summoner Data Example

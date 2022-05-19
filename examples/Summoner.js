@@ -1,4 +1,4 @@
-const { LeagueClient } = require('riot-wrapper');
+const { LeagueClient } = require('arcane.ts');
 
 // Replace the API_KEY with your Riot key.
 // Replace the LEAGUE_VERSION with the latest League Patch.
