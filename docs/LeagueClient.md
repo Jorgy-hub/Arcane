@@ -2,7 +2,7 @@
 
 ## Syntax
 ```js
-const { LeagueClient } = require("riot-wrapper");
+const { LeagueClient } = require("arcane.ts");
 ```
 
 ## Public Methods
@@ -101,8 +101,8 @@ Use this Search for a Champion in the List by it's name.
 LeagueClient.getChampionByName(name: string);
 ```
 ### Parameters
-* <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;"> id </mark>
-The ID string contains the Name of the Champion that is going to be searched.
+* <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;"> name </mark>
+The name string contains the Name of the Champion that is going to be searched.
 ### Return Value
 A Promise containing a <mark style="background-color: #525252; color: white; padding: 5px; border-radius:5px;">LeagueChampion</mark>  Class Objects.
 

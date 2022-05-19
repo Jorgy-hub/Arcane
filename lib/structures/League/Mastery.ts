@@ -43,7 +43,7 @@ export class LeagueMastery {
      * Returns the League Champion Class with it's info, stats, etc...
      * @returns { LeagueChampion }
      */
-    public getChampInfo(): Promise<LeagueChampion> {
+    public getChampInfo():Promise<LeagueChampion> {
         return this._client.getChampionById(this.championId);
     }; 
 };
